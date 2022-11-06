@@ -39,8 +39,8 @@ const CollectionTest = () => {
   const theme = useTheme();
 
   return (
-    <Container
-      sx={{
+    <div
+      style={{
         bottom: 0,
         left: 0,
         position: "absolute",
@@ -49,42 +49,34 @@ const CollectionTest = () => {
       }}
     >
       {loading ? null : (
-        <Box
-          sx={{
-            // // gridGap: "24px",
-            // display: "flex",
-            // gridTemplateColumns: "100%",
-            // // gridTemplateRows: "-webkit-min-content 1fr -webkit-min-conten",
-            // // gridTemplateRows: "min-content 1fr min-conten",
-            // // minHeight: "460p",
-            // // overflow: "hidde",
-            // // position: "absolute",
-            // heigth:"100vh",
-            // flexDirection: "column",
-
-
-            // padding: "24px 16px",
-
-            // height: "100vh",
-            border:1,
-            // maxHeight: "-webkit-fill-available",
-            // minHeight: "100vh",
-            height: "100vh",
-            // border: 1,
-            display: "flex",
-            flexDirection: "column",
-            overflow: "hidden",
-          }}
+        <div style={{
+          padding: "24px 16px",
+          gridGap: "24px",
+        display: "grid",
+        gridTemplateColumns: "100%",
+        gridTemplateRows: "-webkit-min-content 1fr -webkit-min-content",
+        gridTemplateRows: "min-content 1fr min-content",
+        minHeight: "460px",
+        overflow: "hidden",
+        position: "absolute",
+        height: "100%",
+        left: 0,
+        top: 0,
+        width: "100%",
+        }}
+          
         >
-          <Box sx={{ display: "flex", alignItems: "center", flex: 0.5 }}>
+          <Box sx={{  }}>
+          <Box sx={{display:"flex"  }}>
             <Button color="inherit" onClick={handleClose}>
               <CloseIcon sx={{ float: "left" }} />
             </Button>
             <Typography variant="h4" sx={{ display: "inline" }}>
               Grupo: {data.group}
             </Typography>
-          </Box>
+            </Box>
           <LinearProgress variant="determinate" value={(value * 100) / 4} />
+          </Box>
           <Test index={0} value={value}>
             <h3>Símbolos: {data.elementsSymbols.join(", ")}</h3>
             <h3>Nombres: {data.elementsNames.join(", ")}</h3>
@@ -184,9 +176,9 @@ const CollectionTest = () => {
               </Stack>
             )}
           </Box>
-        </Box>
+        </div>
       )}
-    </Container>
+    </div>
   );
 };
 

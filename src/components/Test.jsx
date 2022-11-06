@@ -7,7 +7,7 @@ const Test = ({ value, index, style, children }) => {
       sx={{
         transition: "all 2s",
         flex: 5,
-        border: 1,
+        // border: 1,
         height: "100%",
         ...style,
       }}
