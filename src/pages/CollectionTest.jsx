@@ -13,6 +13,7 @@ import CorrectSymbol from "../components/CorrectSymbol/CorrectSymbol";
 import { useParams } from "react-router-dom";
 import { Stack } from "@mui/system";
 import './styles.css'
+
 const CollectionTest = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);

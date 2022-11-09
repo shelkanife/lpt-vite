@@ -12,6 +12,7 @@ import IFrame from "./pages/IFrame";
 import Mnemonics from "./pages/Mnemonics";
 import ToggleColorMode from "./contexts/theme";
 import CollectionTest from "./pages/CollectionTest";
+import CollectionQuizz from "./pages/CollentionQuizz";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
                 element={<CollectionTest />}
               />
                <Route path="learn/mcg" element={<IFrame />} />
+               <Route path="/quizz/:group" element={<CollectionQuizz />} />
             </Route>
           </Routes>
         </UserProvider>
