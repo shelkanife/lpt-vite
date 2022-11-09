@@ -24,7 +24,7 @@ function App() {
               <Route element={<Menu />}>
                 <Route path="/learn">
                   <Route index element={<Learn />} />
-                  <Route path="mcg" element={<IFrame />} />
+                  
                   <Route path="mnemonics">
                     <Route index element={<Mnemonics />} />
                     <Route path="groups"></Route>
@@ -41,6 +41,7 @@ function App() {
                 path="learn/mnemonics/groups/:group"
                 element={<CollectionTest />}
               />
+               <Route path="learn/mcg" element={<IFrame />} />
             </Route>
           </Routes>
         </UserProvider>

@@ -82,8 +82,7 @@ const WritePharase = ({ func, description, group }) => {
             }}
           >
             <TextField
-              multiline
-              id="outlined-basic"
+              type="text"
               label="Frase nmonica"
               variant="outlined"
               InputLabelProps={{ shrink: true }}

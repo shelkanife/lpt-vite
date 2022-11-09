@@ -26,7 +26,7 @@ const Settings = () => {
     saveState,
   } = useSettings();
   return (
-    <Container sx={{ paddingY: 4 }}>
+    <Container sx={{ paddingY: 3 }}>
       <Box component="form" onSubmit={updateInfoProfile}>
         <Stack direction="row" sx={{ alignItems: "flex-start" }}>
           <Typography sx={{ fontSize: "20px", fontWeight: 700 }}>
@@ -47,7 +47,7 @@ const Settings = () => {
               <tr>
                 <td>Imagen de perfil</td>
                 <td>
-                  <Button component="label" variant="outlined">
+                  <Button component="label" variant="outlined" sx={{textAlign:"center"}}>
                     Elegir archivo
                     <input
                       type="file"
@@ -103,7 +103,7 @@ const Settings = () => {
               <tr>
                 <td>Correo verifiacado</td>
                 <td>
-                  <Typography>
+                <Typography sx={{ paddingLeft: "16.5px", paddingTop: "5px" }}>
                     {currentUser.emailVerified ? "Yes" : "No"}
                   </Typography>
                 </td>
@@ -118,6 +118,9 @@ const Settings = () => {
                       display: "flex",
                       // justifyContent: "space-around",
                       // justifyContent: "center",
+                      [theme.breakpoints.down("sm")]:{
+                        flexDirection:"column"
+                      }
                     }}
                   >
                     <Button
@@ -132,6 +135,9 @@ const Settings = () => {
                         borderRadius: 0,
                         borderTopLeftRadius: 6,
                         borderBottomLeftRadius: 6,
+                        [theme.breakpoints.down("sm")]:{
+                          borderRadius:0
+                        }
                       }}
                       onClick={() => toggleColorMode("light")}
                     >
@@ -141,12 +147,6 @@ const Settings = () => {
                       disableElevation
                       sx={{
                         borderRadius: 0,
-                        // borderRight: 0,
-                        // borderLeft: 0,
-                        // "&:hover": {
-                        //   borderRight: 0,
-                        //   borderLeft: 0,
-                        // },
                       }}
                       variant={
                         theme.palette.systemMode ? "contained" : "outlined"
@@ -161,6 +161,9 @@ const Settings = () => {
                         borderRadius: 0,
                         borderTopRightRadius: 6,
                         borderBottomRightRadius: 6,
+                        [theme.breakpoints.down("sm")]:{
+                          borderRadius:0
+                        }
                       }}
                       variant={
                         theme.palette.mode === "dark" &&

@@ -13,7 +13,7 @@ export const groups = {
     words: { 1: "Ningún", 2: "pollo", 3: "asado", 4: "sabe", 5: "bien" },
     pharase: "Ningún pollo asado sabe bien",
     description:
-      "El objetivo de este ejercicio es que memorices la frase anterior. Fijate en las letras rojas estas son los elementos del grupo 17 de la tabla periodica",
+      "El objetivo de este ejercicio es que memorices la frase anterior.",
   },
   16: {
     group: 16,
@@ -35,6 +35,6 @@ export const groups = {
     },
     pharase: "Como si la gente sonriera en público",
     description:
-      "El objetivo de este ejercicio es que memorices la frase anterior. Fijate en las letras rojas estas son los elementos del grupo 17 de la tabla periodica",
+      "El objetivo de este ejercicio es que memorices la frase anterior.",
   },
 };

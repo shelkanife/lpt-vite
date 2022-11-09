@@ -23,6 +23,7 @@ const Menu = () => {
               left: 0,
               right: 0,
               height: "auto",
+              zIndex:999
             },
           }}
           elevation={3}

@@ -12,7 +12,7 @@ import WritePharase from "../components/WritePharase";
 import CorrectSymbol from "../components/CorrectSymbol/CorrectSymbol";
 import { useParams } from "react-router-dom";
 import { Stack } from "@mui/system";
-
+import './styles.css'
 const CollectionTest = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -39,33 +39,9 @@ const CollectionTest = () => {
   const theme = useTheme();
 
   return (
-    <div
-      style={{
-        bottom: 0,
-        left: 0,
-        position: "absolute",
-        right: 0,
-        top: 0,
-      }}
-    >
+    <Container className="container">
       {loading ? null : (
-        <div style={{
-          padding: "24px 16px",
-          gridGap: "24px",
-        display: "grid",
-        gridTemplateColumns: "100%",
-        gridTemplateRows: "-webkit-min-content 1fr -webkit-min-content",
-        gridTemplateRows: "min-content 1fr min-content",
-        minHeight: "460px",
-        overflow: "hidden",
-        position: "absolute",
-        height: "100%",
-        left: 0,
-        top: 0,
-        width: "100%",
-        }}
-          
-        >
+        <div className="unscroll">
           <Box sx={{  }}>
           <Box sx={{display:"flex"  }}>
             <Button color="inherit" onClick={handleClose}>
@@ -111,7 +87,7 @@ const CollectionTest = () => {
             <h3>Nombres: {data.elementsNames.join(", ")}</h3>
             <h4>Frase: {data.pharase}</h4>
             <div>
-              <p>{data.description}</p>
+              <Typography>Ejercicio terminado elige alguna de las siguientes opciones y sigue prácticando</Typography>
             </div>
           </Test>
           <Box
@@ -164,7 +140,7 @@ const CollectionTest = () => {
                 </Button>
                 <Button
                   variant="contained"
-                  color="error"
+                  color="primary"
                   onClick={handleClose}
                   sx={{
                     width: "100%",
@@ -178,7 +154,7 @@ const CollectionTest = () => {
           </Box>
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 
