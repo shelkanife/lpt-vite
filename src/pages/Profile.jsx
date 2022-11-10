@@ -23,7 +23,9 @@ const Profile = () => {
   }, [displayName]);
 
   return (
-    <Container>
+    // <Container>
+    <Container disabñeGutters sx={{ overflow: "auto", marginBottom: "70px" }}>
+
       <ProfileInfoCard
         displayName={displayName}
         isMyProfile={displayName === getCurretUser().displayName}

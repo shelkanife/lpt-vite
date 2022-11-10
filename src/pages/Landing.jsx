@@ -1,11 +1,12 @@
 import { Container, Stack, Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
-import NavBar from "../components/NavBar";
+import { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import LandingSection from "../components/LandingSection";
 import LoginModal from "../components/LoginModal";
 import { btn, logo, mainStack } from "../components/globalStyles";
-
+import { useUserContext } from "../contexts/user";
+import { useNavigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
 const Landing = () => {
   const theme = useTheme();
   const [open, setOpen] = useState({ open: false, isLogin: false });

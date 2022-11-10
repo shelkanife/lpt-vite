@@ -13,8 +13,11 @@ import Mnemonics from "./pages/Mnemonics";
 import ToggleColorMode from "./contexts/theme";
 import CollectionTest from "./pages/CollectionTest";
 import CollectionQuizz from "./pages/CollentionQuizz";
+import NavBar from "./components/NavBar";
+import NavBarLoggedIn from "./components/NavBarLoggedIn";
 
 function App() {
+
   return (
     <ToggleColorMode>
       <BrowserRouter>
@@ -22,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route element={<RequireAuth />}>
+              <Route element={<NavBarLoggedIn/>}>
               <Route element={<Menu />}>
                 <Route path="/learn">
                   <Route index element={<Learn />} />
@@ -38,13 +42,14 @@ function App() {
                   <Route path=":displayName" element={<Profile />} />
                 </Route>
               </Route>
+            </Route>
+            </Route>
               <Route
                 path="learn/mnemonics/groups/:group"
                 element={<CollectionTest />}
               />
                <Route path="learn/mcg" element={<IFrame />} />
                <Route path="/quizz/:group" element={<CollectionQuizz />} />
-            </Route>
           </Routes>
         </UserProvider>
       </BrowserRouter>

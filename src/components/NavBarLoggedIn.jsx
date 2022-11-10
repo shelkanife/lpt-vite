@@ -4,9 +4,9 @@ import { toolbar } from "../components/globalStyles";
 import { Outlet } from "react-router-dom";
 import { useUserContext } from "../contexts/user";
 
-const NavBar = ({ handleOpen }) => {
+const NavBarLoggedIn = ({ handleOpen }) => {
   const [show, setShow] = useState(null);
-
+  
   useEffect(() => {
     if (window.scrollY > 500) setShow(true);
     else setShow(false);
@@ -22,12 +22,12 @@ const NavBar = ({ handleOpen }) => {
   return (
     <>
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="fixed" sx={{ backgroundColor: "#235390" }}>
+      <AppBar position="fixed" sx={{ maxHeight:"70px",backgroundColor:  "#2E7D32"}}>
         <Toolbar sx={toolbar}>
           <Typography variant="h5" sx={{ flexGrow: 1 }}>
             Tabla peri&oacute;dica
           </Typography>
-          {show  ? (
+          {show && !loggedIn ? (
             <Box sx={{ display: { xs: "none", md: "flex", gap: 5 } }}>
               <Button
                 variant="contained"
@@ -54,4 +54,4 @@ const NavBar = ({ handleOpen }) => {
   );
 };
 
-export default NavBar;
+export default NavBarLoggedIn;

@@ -26,7 +26,8 @@ const Settings = () => {
     saveState,
   } = useSettings();
   return (
-    <Container sx={{ paddingY: 3 }}>
+    // <Container sx={{ paddingY: 3 }}>
+    <Container sx={{ overflow: "auto", marginBottom: "70px" }}>
       <Box component="form" onSubmit={updateInfoProfile}>
         <Stack direction="row" sx={{ alignItems: "flex-start" }}>
           <Typography sx={{ fontSize: "20px", fontWeight: 700 }}>
@@ -141,7 +142,7 @@ const Settings = () => {
                       }}
                       onClick={() => toggleColorMode("light")}
                     >
-                      Light
+                      Claro
                     </Button>
                     <Button
                       disableElevation
@@ -153,7 +154,7 @@ const Settings = () => {
                       }
                       onClick={() => toggleColorMode("system")}
                     >
-                      System
+                      Sistema
                     </Button>
                     <Button
                       disableElevation
@@ -173,7 +174,7 @@ const Settings = () => {
                       }
                       onClick={() => toggleColorMode("dark")}
                     >
-                      Dark
+                      Obscuro
                     </Button>
                   </Stack>
                 </td>

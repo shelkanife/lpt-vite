@@ -27,7 +27,8 @@ const Social = () => {
 
   return (
     <Container>
-      <h1>Social</h1>
+      <Typography variant="h4">Social</Typography>
+
       <Box>
         <Box component="form" onSubmit={handleSubmit} sx={{ marginBottom: 4 }}>
           <TextField

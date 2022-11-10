@@ -4,7 +4,7 @@ const Learn = () => {
   return (
     <Container sx={{ overflow: "auto", marginBottom: "70px" }}>
       <Box>
-        <h1>Aprende reglas mnemotecnicas</h1>
+        <Typography variant="h4">Aprende reglas mnemotecnicas</Typography>
         <Box
           sx={{
             display: "grid",
@@ -24,7 +24,7 @@ const Learn = () => {
           <StrategyCard
             uri="/learn/mnemonics"
             title="Nemotecmia"
-            description="Aprende el grupo X e Y utilizando la nemotecmia"
+            description="Aprende el grupo 16 y 17 utilizando la nemotecmia"
           />
         </Box>
       </Box>

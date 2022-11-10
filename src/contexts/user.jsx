@@ -25,7 +25,10 @@ export default function UserProvider({ children }) {
         setCurrentUser({
           ...getCurretUser(),
         });
-      } else setLoggedIn(false);
+      } else {
+        setCurrentUser(null)
+        setLoggedIn(false);
+      }
 
       setCheckingStatus(false);
     });

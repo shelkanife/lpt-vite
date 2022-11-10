@@ -1,4 +1,4 @@
-import { Container, Paper, Stack } from "@mui/material";
+import { Container, Paper, Stack,Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
@@ -12,21 +12,27 @@ import { getCurretUser } from "../services/auth";
 const Menu = () => {
   const theme = useTheme();
   return (
-    <Container>
+    <Container sx={{marginTop:"70px"}}>
       <Stack direction="row" spacing={0}>
-        <Paper
-          sx={{
+        <Box sx={{ 
             height: "256px",
+            [theme.breakpoints.up("md")]: {
+              position:"relative",
+            },
+            
             [theme.breakpoints.down("md")]: {
               position: "fixed",
               bottom: 0,
               left: 0,
               right: 0,
               height: "auto",
-              zIndex:999
-            },
+              zIndex:999,}}}>
+        <Paper
+          sx={{
+            boxShadow:"none"
           }}
-          elevation={3}
+          // elevation={3}
+          
         >
           <Stack
             sx={{
@@ -56,6 +62,7 @@ const Menu = () => {
             </MenuItem>
           </Stack>
         </Paper>
+        </Box>
         <Outlet />
       </Stack>
     </Container>

@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 
 const MenuItem = ({ uri, children, text }) => {
   const location = useLocation();
-  console.log(uri.split("/"));
   const theme = useTheme();
 
   // setCurrentPage(iconType);
@@ -14,6 +13,16 @@ const MenuItem = ({ uri, children, text }) => {
       sx={{
         height: "56px",
         textDecoration: "none",
+        borderRadius:"10px",
+        alignItems:"center",
+        [theme.breakpoints.up("md")]: {
+          display:"flex",
+          alignItems:"center",
+          // justifyContent:"center",
+        },
+        // height:"100%",
+        border:location.pathname.includes(uri.split("/")[1])?"2px solid #84d8ff":"inherit",
+        backgroundColor:location.pathname.includes(uri.split("/")[1])?"#DDF4FF":"",
         color: location.pathname.includes(uri.split("/")[1])
           ? "#1976d2"
           : "inherit",

@@ -20,6 +20,8 @@ const MyProfilePage = () => {
 
   return (
     <Container disableGutters>
+    {/* <Container disabñeGutters sx={{ overflow: "auto", marginBottom: "70px" }}> */}
+
       <MyProfile />
       <Typography
         sx={{

@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 const Quizz = () => {
   return (
     <Container >
-      <Typography variant="h3">Verifica tus conocimientos</Typography>
-      <Box sx={{ padding: "24px 16px"}}>
+      <Typography variant="h4">Verifica tus conocimientos</Typography>
+
+      <Box sx={{ padding: "24px 0"}}>
         <Card sx={{ display: "flex", alignItems: "center", paddingX: "16px",marginBottom:"16px" }}>
           <Link
             to="16"
