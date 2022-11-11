@@ -13,7 +13,14 @@ export const groups = {
     words: { 1: "Ningún", 2: "pollo", 3: "asado", 4: "sabe", 5: "bien" },
     pharase: "Ningún pollo asado sabe bien",
     description:
-      "El objetivo de este ejercicio es que memorices la frase anterior.",
+      "El objetivo de este ejercicio es que memorices la frase anterior y la relaciones con los elementos químicos pertenecientes a ese público",
+    explanation: [
+      "N => Ningún",
+      "P => Pollo",
+      "As => Asado",
+      "Sb => Sabe",
+      "Bi => Bien",
+    ],
   },
   16: {
     group: 16,
@@ -35,6 +42,13 @@ export const groups = {
     },
     pharase: "Como si la gente sonriera en público",
     description:
-      "El objetivo de este ejercicio es que memorices la frase anterior.",
+      "El objetivo de este ejercicio es que memorices la frase anterior y la relaciones con los elementos químicos pertenecientes a ese público",
+    explanation: [
+      "C => Como",
+      "Si => Si",
+      "Ge => la Gente",
+      "Sn => Sonriera en",
+      "Pb => Público",
+    ],
   },
 };

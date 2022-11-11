@@ -1,33 +1,53 @@
-import { useState } from "react";
-import { groups } from "../pages/data"
-import {mix} from '../services/mixCards'
-import {Box,Typography,Button} from '@mui/material'
+import { useEffect, useState } from "react";
+import { Box, Typography, Button } from "@mui/material";
 import MegaElementCard from "./MegeElementCard";
-const FourOptsQuizz = ({symbol,name,description}) => {
-  const [symbols, setSymbols] = useState([]);
-  const [names,setNames] = useState([]);
-  const [order,setOrder]=useState(mix(Array.from({length:5})))
-  const [prevElement,setPrevElement]=useState(null)
 
-//   useEffect(() => {
-//     setElements({ ...groups[group].elements });
-//       }, []);
-// success : #2e7d32
-// error: #d32f2f
-// primary: ##1976d2
+const FourOptsQuizz = ({
+  symbol,
+  name,
+  description,
+  options,
+  score,
+  func,
+  index,
+  children,
+}) => {
+  // success : #2e7d32
+  // error: #d32f2f
+  // primary: ##1976d2
 
-const hangeColor = (e) => {
-    if(prevElement){
-        prevElement.style.backgroundColor = "#fff"
-        prevElement.style.color="#1976d2"
+  const [prevElement, setPrevElement] = useState(null);
+  const [currentElement, setCurrentElement] = useState(null);
+  const [currentName, setCurrentName] = useState(null);
+  const [disabled, setDisabled] = useState(false);
+  useEffect(() => console.log(currentName));
+
+  const hangeColor = (e, name) => {
+    if (prevElement) {
+      prevElement.style.backgroundColor = "#fff";
+      prevElement.style.color = "#1976d2";
     }
-    e.target.style.backgroundColor = "#1976d2"
-    e.target.style.color="#fff"
-    setPrevElement(e.target)
-    console.log("clicking")
-}
-    return(
-        <Box
+    e.target.style.backgroundColor = "#1976d2";
+    e.target.style.color = "#fff";
+    setPrevElement(e.target);
+    setCurrentName(name);
+  };
+
+  const checkAnswer = () => {
+    prevElement.style.backgroundColor =
+      currentName === name ? "#2e7d32" : "#d32f2f";
+    setDisabled(true);
+    func();
+    score((prev) => {
+      console.log(prev);
+      const copy = prev.slice();
+      copy[index] = currentName === name;
+      return [...copy];
+    });
+  };
+
+  return (
+    <Box
       sx={{
         padding: 2,
         height: "100%",
@@ -40,7 +60,6 @@ const hangeColor = (e) => {
       </Typography>
       <Box
         sx={{
-        //   padding: 1,
           flex: 1,
           alignContent: "center",
           justifyContent: "center",
@@ -49,27 +68,41 @@ const hangeColor = (e) => {
           flexDirection: "column",
         }}
       >
-        
         <MegaElementCard
-        name={name}
-        symbol={symbol}
-        style={{
+          // name={name}
+          symbol={symbol}
+          style={{
             width: "200px",
             height: "200px",
             fontSize: "2rem",
             margin: "auto",
-        }}
+          }}
         />
-        
       </Box>
-      <Box sx={{display:"grid",gridTemplateColumns:"auto auto", rowGap:"10px",columnGap:"10px",marginBottom:"10px"}}>
-        <Button variant="outlined"  onClick={hangeColor}>Opt1</Button>
-        <Button variant="outlined"  onClick={hangeColor}>Opt2</Button>
-        <Button variant="outlined"  onClick={hangeColor}>Opt3</Button>
-        <Button variant="outlined"  onClick={hangeColor}>Opt4</Button>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "auto auto",
+          rowGap: "10px",
+          columnGap: "10px",
+          marginBottom: "10px",
+        }}
+      >
+        {options.map((option) => (
+          <Button
+            variant="outlined"
+            onClick={(e) => hangeColor(e, option)}
+            disabled={disabled}
+          >
+            {option}
+          </Button>
+        ))}
       </Box>
-      <Button variant="contained" >Comprobar</Button>
+      <Button variant="contained" onClick={checkAnswer} disabled={disabled}>
+        Comprobar
+      </Button>
+      {children}
     </Box>
-    )
-}
-export default FourOptsQuizz
+  );
+};
+export default FourOptsQuizz;

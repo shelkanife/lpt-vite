@@ -1,6 +1,5 @@
 import {
   Card,
-  Button,
   CardMedia,
   CardContent,
   Typography,
@@ -10,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const StrategyCard = ({ uri, title, description }) => {
   return (
-    <Card sx={{ maxWidth: 345, minWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, minWidth: 345, height: 300, marginTop: "20px" }}>
       <Link to={uri} style={{ textDecoration: "none", color: "inherit" }}>
         <CardMedia
           component="img"

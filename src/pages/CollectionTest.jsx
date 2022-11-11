@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Test from "../components/Test";
 import { useEffect, useState } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
-import { groups } from "./data"
+import { groups } from "./data";
 import MatchTest from "../components/MatchTest";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
@@ -12,7 +12,7 @@ import WritePharase from "../components/WritePharase";
 import CorrectSymbol from "../components/CorrectSymbol/CorrectSymbol";
 import { useParams } from "react-router-dom";
 import { Stack } from "@mui/system";
-import './styles.css'
+import "./styles.css";
 
 const CollectionTest = () => {
   const [data, setData] = useState({});
@@ -43,16 +43,16 @@ const CollectionTest = () => {
     <Container className="container">
       {loading ? null : (
         <div className="unscroll">
-          <Box sx={{  }}>
-          <Box sx={{display:"flex"  }}>
-            <Button color="inherit" onClick={handleClose}>
-              <CloseIcon sx={{ float: "left" }} />
-            </Button>
-            <Typography variant="h4" sx={{ display: "inline" }}>
-              Grupo: {data.group}
-            </Typography>
+          <Box sx={{}}>
+            <Box sx={{ display: "flex" }}>
+              <Button color="inherit" onClick={handleClose}>
+                <CloseIcon sx={{ float: "left" }} />
+              </Button>
+              <Typography variant="h4" sx={{ display: "inline" }}>
+                Grupo: {data.group}
+              </Typography>
             </Box>
-          <LinearProgress variant="determinate" value={(value * 100) / 4} />
+            <LinearProgress variant="determinate" value={(value * 100) / 4} />
           </Box>
           <Test index={0} value={value}>
             <h3>Símbolos: {data.elementsSymbols.join(", ")}</h3>
@@ -60,6 +60,9 @@ const CollectionTest = () => {
             <h4>Frase: {data.pharase}</h4>
             <div>
               <p>{data.description}</p>
+              {data.explanation.map((e) => (
+                <p style={{ margin: 0 }}>{e}</p>
+              ))}
             </div>
           </Test>
           <Test index={1} value={value}>
@@ -88,7 +91,10 @@ const CollectionTest = () => {
             <h3>Nombres: {data.elementsNames.join(", ")}</h3>
             <h4>Frase: {data.pharase}</h4>
             <div>
-              <Typography>Ejercicio terminado elige alguna de las siguientes opciones y sigue prácticando</Typography>
+              <Typography>
+                Ejercicio terminado elige alguna de las siguientes opciones y
+                sigue prácticando
+              </Typography>
             </div>
           </Test>
           <Box

@@ -2,7 +2,9 @@ import { Container, Box, Typography } from "@mui/material";
 import StrategyCard from "../components/StrategyCard";
 const Learn = () => {
   return (
-    <Container sx={{ overflow: "auto", marginBottom: "70px" }}>
+    <Container
+      sx={{ overflowX: "hidden", marginBottom: "80px", paddingY: "10px" }}
+    >
       <Box>
         <Typography variant="h4">Aprende reglas mnemotecnicas</Typography>
         <Box
@@ -21,6 +23,7 @@ const Learn = () => {
             title="Memorama"
             description="Aprende jugando al memorama"
           />
+
           <StrategyCard
             uri="/learn/mnemonics"
             title="Nemotecmia"

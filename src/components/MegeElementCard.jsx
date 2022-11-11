@@ -1,15 +1,11 @@
 import { Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const MegaElementCard = ({ symbol, name }) => {
+  const theme = useTheme();
   return (
     <Box
-      //   component="button"
-      //   disabled={disabled}
-      //   onClick={() => func(index)}
       sx={{
-        // margin: 0,
-        // padding: 0,
-        // boxSizing: "border-box",
         height: "200px",
         width: "200px",
         border: 1,
@@ -18,12 +14,10 @@ const MegaElementCard = ({ symbol, name }) => {
         alignItems: "center",
         borderRadius: "4px",
         margin: "auto",
-
-        // color: active ? "blue" : "inherit",
-        // [theme.breakpoints.down("sm")]: {
-        //   height: "65px",
-        //   width: "65px",
-        // },
+        [theme.breakpoints.down("sm")]: {
+          height: "180px",
+          width: "180px",
+        },
       }}
     >
       <Box
