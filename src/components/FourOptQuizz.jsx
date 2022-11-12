@@ -17,29 +17,41 @@ const FourOptsQuizz = ({
   // primary: ##1976d2
 
   const [prevElement, setPrevElement] = useState(null);
-  const [currentElement, setCurrentElement] = useState(null);
+  // const [currentElement, setCurrentElement] = useState(null);
   const [currentName, setCurrentName] = useState(null);
   const [disabled, setDisabled] = useState(false);
-  useEffect(() => console.log(currentName));
+  // useEffect(() => console.log(currentName));
 
-  const hangeColor = (e, name) => {
+  //contained css-sghohy-MuiButtonBase-root-MuiButton-root
+  //outlined css-sghohy-MuiButtonBase-root-MuiButton-root
+  // disabled
+  const changeColor = (e, name) => {
     if (prevElement) {
-      prevElement.style.backgroundColor = "#fff";
-      prevElement.style.color = "#1976d2";
+      // css - sghohy - MuiButtonBase - root - MuiButton - root;
+      prevElement.classList.remove(
+        "css-sghohy-MuiButtonBase-root-MuiButton-root"
+      );
+      prevElement.classList.add(
+        ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+      );
+      // prevElement.style.backgroundColor = "#fff";
+      // prevElement.style.color = "#1976d2";
     }
-    e.target.style.backgroundColor = "#1976d2";
-    e.target.style.color = "#fff";
+    e.target.classList.remove("css-sghohy-MuiButtonBase-root-MuiButton-root");
+    e.target.classList.add("css-sghohy-MuiButtonBase-root-MuiButton-root");
+    // e.target.style.backgroundColor = "#1976d2";
+    // e.target.style.color = "#fff";
     setPrevElement(e.target);
     setCurrentName(name);
   };
 
   const checkAnswer = () => {
+    prevElement.style.color = "#fff";
     prevElement.style.backgroundColor =
       currentName === name ? "#2e7d32" : "#d32f2f";
     setDisabled(true);
     func();
     score((prev) => {
-      console.log(prev);
       const copy = prev.slice();
       copy[index] = currentName === name;
       return [...copy];
@@ -91,7 +103,7 @@ const FourOptsQuizz = ({
         {options.map((option) => (
           <Button
             variant="outlined"
-            onClick={(e) => hangeColor(e, option)}
+            onClick={(e) => changeColor(e, option)}
             disabled={disabled}
           >
             {option}

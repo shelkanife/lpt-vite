@@ -15,8 +15,8 @@ export const groups = {
     description:
       "El objetivo de este ejercicio es que memorices la frase anterior y la relaciones con los elementos químicos pertenecientes a ese público",
     explanation: [
-      "N => Ningún",
-      "P => Pollo",
+      "N  => Ningún",
+      "P  => Pollo",
       "As => Asado",
       "Sb => Sabe",
       "Bi => Bien",
@@ -44,7 +44,7 @@ export const groups = {
     description:
       "El objetivo de este ejercicio es que memorices la frase anterior y la relaciones con los elementos químicos pertenecientes a ese público",
     explanation: [
-      "C => Como",
+      "C  => Como",
       "Si => Si",
       "Ge => la Gente",
       "Sn => Sonriera en",

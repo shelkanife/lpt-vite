@@ -36,10 +36,26 @@ const ElementCard = ({ index, symbol, name, func, active, disabled }) => {
           },
         }}
       >
-        <Typography fontWeight={700} fontSize={20}>
+        <Typography
+          fontWeight={700}
+          sx={{
+            [theme.breakpoints.up("sm")]: {
+              fontSize: "20px",
+            },
+          }}
+        >
           {symbol}
         </Typography>
-        <Typography fontSize={symbol ? "inherit" : 20}>{name}</Typography>
+        <Typography
+          sx={{
+            fontSize: "inherit",
+            [theme.breakpoints.up("sm")]: {
+              fontSize: symbol ? "inherit" : 20,
+            },
+          }}
+        >
+          {name}
+        </Typography>
       </Box>
     </Box>
   );
