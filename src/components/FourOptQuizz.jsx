@@ -27,20 +27,10 @@ const FourOptsQuizz = ({
   // disabled
   const changeColor = (e, name) => {
     if (prevElement) {
-      // css - sghohy - MuiButtonBase - root - MuiButton - root;
-      prevElement.classList.remove(
-        "css-sghohy-MuiButtonBase-root-MuiButton-root"
-      );
-      prevElement.classList.add(
-        "css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
-      );
-      // prevElement.style.backgroundColor = "#fff";
-      // prevElement.style.color = "#1976d2";
+      prevElement.classList.remove("selected");
+      prevElement.classList.add("unselected");
     }
-    e.target.classList.remove("css-sghohy-MuiButtonBase-root-MuiButton-root");
-    e.target.classList.add("css-sghohy-MuiButtonBase-root-MuiButton-root");
-    // e.target.style.backgroundColor = "#1976d2";
-    // e.target.style.color = "#fff";
+    e.target.classList.add("selected");
     setPrevElement(e.target);
     setCurrentName(name);
   };
