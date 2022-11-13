@@ -32,7 +32,7 @@ const FourOptsQuizz = ({
         "css-sghohy-MuiButtonBase-root-MuiButton-root"
       );
       prevElement.classList.add(
-        ".css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+        "css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
       );
       // prevElement.style.backgroundColor = "#fff";
       // prevElement.style.color = "#1976d2";
