@@ -76,7 +76,7 @@ const CollectionQuizz = () => {
             <AnsweresState state={score} />
           </Box>
           {order.map((element, index) => (
-            <Test index={index} value={value}>
+            <Test index={index} value={value} key={index}>
               <FourOptsQuizz
                 name={names[element]}
                 symbol={symbols[element]}

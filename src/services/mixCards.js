@@ -21,6 +21,6 @@ export const getOpts = (current, array) => {
       index = Math.floor(Math.random() * filteredArray.length);
     opts.push(filteredArray[index]);
   }
-  console.log("finished");
+  // console.log("finished");
   return mix(opts);
 };

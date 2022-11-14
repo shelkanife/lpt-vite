@@ -92,6 +92,7 @@ const FourOptsQuizz = ({
       >
         {options.map((option) => (
           <Button
+            key={option}
             variant="outlined"
             onClick={(e) => changeColor(e, option)}
             disabled={disabled}

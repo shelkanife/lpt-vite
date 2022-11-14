@@ -61,7 +61,9 @@ const CollectionTest = () => {
             <div>
               <p>{data.description}</p>
               {data.explanation.map((e) => (
-                <p style={{ margin: 0 }}>{e}</p>
+                <p style={{ margin: 0 }} key={e}>
+                  {e}
+                </p>
               ))}
             </div>
           </Test>

@@ -67,7 +67,11 @@ const WritePharase = ({ func, description, group }) => {
             }}
           >
             {Object.values(elements).map((element) => (
-              <ElementCard name={element.name} symbol={element.symbol} />
+              <ElementCard
+                key={element.name}
+                name={element.name}
+                symbol={element.symbol}
+              />
             ))}
           </Box>
           <Box

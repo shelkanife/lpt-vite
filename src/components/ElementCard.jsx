@@ -9,7 +9,6 @@ const ElementCard = ({ index, symbol, name, func, active, disabled }) => {
       component="button"
       disabled={disabled}
       onClick={() => func(index)}
-      disab
       sx={{
         margin: 0,
         padding: 0,

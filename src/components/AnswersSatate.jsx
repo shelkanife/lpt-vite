@@ -41,8 +41,8 @@ const AnsweresState = ({ state }) => {
         // width: "30px",
       }}
     >
-      {state.map((e) => (
-        <Circle state={e} />
+      {state.map((e, index) => (
+        <Circle state={e} key={index} />
       ))}
     </Box>
   );

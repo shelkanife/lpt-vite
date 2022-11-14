@@ -23,11 +23,9 @@ const MatchTest = ({ func, description, group }) => {
       if (game.length === 2) {
         if (Math.abs(game[0] - game[1]) < 5) setGame([...game.slice(1)]);
         if (Math.abs(game[0] - game[1]) === 5) {
-          console.log("they match");
           setMatched([...matched, ...game]);
-        } else console.log("they do not match");
+        }
         id = setTimeout(() => {
-          console.log("aqui va");
           setGame([]);
         }, 100);
       }
@@ -39,12 +37,10 @@ const MatchTest = ({ func, description, group }) => {
     setEArray(mix(eArray));
     setWords({ ...groups[group].words });
     setElements({ ...groups[group].elements });
-    console.log(elements, words);
     setLoading(false);
   }, []);
 
   const addToMatrix = (index) => {
-    console.log(index);
     setGame([...game, index]);
   };
 
@@ -83,6 +79,7 @@ const MatchTest = ({ func, description, group }) => {
             {wArray.map((index) => {
               return (
                 <ElementCard
+                  key={index}
                   name={words[index]}
                   index={index}
                   func={addToMatrix}
@@ -100,6 +97,7 @@ const MatchTest = ({ func, description, group }) => {
           >
             {eArray.map((index) => (
               <ElementCard
+                key={index}
                 name={elements[index].name}
                 symbol={elements[index].symbol}
                 func={addToMatrix}
