@@ -43,7 +43,7 @@ const Quizz = () => {
             <ArrowForwardIosIcon />
           </CardActions>
         </Card>
-        <Card
+        {/* <Card
           sx={{
             display: "flex",
             alignItems: "center",
@@ -51,16 +51,16 @@ const Quizz = () => {
             marginBottom: "16px",
           }}
         >
-          {/* <Link
+          <Link
             to="random"
             style={{ textDecoration: "none", color: "inherit", flex: 1 }}
           >
             <Typography>Todos</Typography>
-          </Link> */}
+          </Link>
           <CardActions>
             <ArrowForwardIosIcon />
           </CardActions>
-        </Card>
+        </Card> */}
       </Box>
     </Container>
   );
