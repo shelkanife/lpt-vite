@@ -1,13 +1,20 @@
-import { Container,Typography,Box,Card,CardActions } from "@mui/material";
+import { Container, Typography, Box, Card, CardActions } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Link } from "react-router-dom";
 const Quizz = () => {
   return (
-    <Container >
+    <Container>
       <Typography variant="h4">Verifica tus conocimientos</Typography>
 
-      <Box sx={{ padding: "24px 0"}}>
-        <Card sx={{ display: "flex", alignItems: "center", paddingX: "16px",marginBottom:"16px" }}>
+      <Box sx={{ padding: "24px 0" }}>
+        <Card
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            paddingX: "16px",
+            marginBottom: "16px",
+          }}
+        >
           <Link
             to="16"
             style={{ textDecoration: "none", color: "inherit", flex: 1 }}
@@ -18,7 +25,14 @@ const Quizz = () => {
             <ArrowForwardIosIcon />
           </CardActions>
         </Card>
-        <Card sx={{ display: "flex", alignItems: "center", paddingX: "16px",marginBottom:"16px" }}>
+        <Card
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            paddingX: "16px",
+            marginBottom: "16px",
+          }}
+        >
           <Link
             to="17"
             style={{ textDecoration: "none", color: "inherit", flex: 1 }}
@@ -29,13 +43,20 @@ const Quizz = () => {
             <ArrowForwardIosIcon />
           </CardActions>
         </Card>
-        <Card sx={{ display: "flex", alignItems: "center", paddingX: "16px",marginBottom:"16px" }}>
-          <Link
+        <Card
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            paddingX: "16px",
+            marginBottom: "16px",
+          }}
+        >
+          {/* <Link
             to="random"
             style={{ textDecoration: "none", color: "inherit", flex: 1 }}
           >
             <Typography>Todos</Typography>
-          </Link>
+          </Link> */}
           <CardActions>
             <ArrowForwardIosIcon />
           </CardActions>
